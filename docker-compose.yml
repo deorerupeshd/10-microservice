@@ -1,0 +1,75 @@
+version: '3'
+
+services:
+  adservice:
+    image: rupesh4iac/adservice:1
+    ports:
+      - "9555:9555"
+    networks:
+      - my_network
+  cartservice:
+    image: rupesh4iac/cartservice:1
+    ports:
+      - "7070:7070" 
+    networks:
+      - my_network
+  checkoutservice:
+    image: rupesh4iac/checkoutservice:1
+    ports:
+      - "5050:5050"  
+    networks:
+      - my_network
+  currencyservice:
+    image: rupesh4iac/currencyservice:1
+    ports:
+      - "7000:7000"  
+    networks:
+      - my_network
+  emailservice:
+    image: rupesh4iac/emailservice:1
+    ports:
+      - "8080:8080"  
+    networks:
+      - my_network
+  frontend:
+    image: rupesh4iac/frontend:1
+    ports:
+      - "8081:8080" 
+    networks:
+      - my_network
+  loadgenerator:
+    image: rupesh4iac/loadgenerator:1 
+    networks:
+      - my_network
+  paymentservice:
+    image: rupesh4iac/paymentservice:1
+    ports:
+      - "50051:50051" 
+    networks:
+      - my_network
+  productcatalogservice:
+    image: rupesh4iac/productcatalogservice:1
+    ports:
+      - "3550:3550" 
+    networks:
+      - my_network
+  recommendationservice:
+    image: rupesh4iac/recommendationservice:1
+    ports:
+      - "8082:8080"  
+    networks:
+      - my_network
+  shippingservice:
+    image: rupesh4iac/shippingservice:1
+    ports:
+      - "50052:50051"  
+    networks:
+      - my_network
+networks:
+  my_network:
+    driver: bridge
+
+
+
+
+
